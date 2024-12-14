@@ -35,7 +35,7 @@ shipments = []
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'xander123!',  # Use your MySQL password
+    'password': 'xander123!',  
     'database': 'shipping'
 }
 
@@ -66,8 +66,8 @@ class LoginWindow(tk.Tk):
         
         # Window setup
         self.title("Shipping Management System")
-        self.geometry("1000x600")  # Increased width to accommodate the layout
-        self.configure(bg='#FFE4E1')  # Light pink background
+        self.geometry("1000x600")  
+        self.configure(bg='#FFE4E1')  
         
         # Create left panel frame (for ship image)
         self.left_panel = tk.Frame(
@@ -80,8 +80,7 @@ class LoginWindow(tk.Tk):
         # Load and display the ship logo
         try:
             from PIL import Image, ImageTk
-            
-            # Use the full path to the image
+           
             image_path = r"C:\Users\kujo7\OneDrive\Desktop\JAVA THE HUTT\Curry\src\img\for img and icons\Black Modern Cargo Vessel Ship Design Logo Template.png"
             
             print(f"Attempting to load image from: {image_path}")
@@ -94,14 +93,14 @@ class LoginWindow(tk.Tk):
             panel_width = self.left_panel.winfo_width()
             panel_height = self.left_panel.winfo_height()
             
-            # Calculate size to maintain aspect ratio while fitting the panel
-            # Use 80% of the panel width to leave some margin
+            
+            
             target_width = int(panel_width * 0.8)
             aspect_ratio = original_image.width / original_image.height
             target_height = int(target_width / aspect_ratio)
             
-            # If the height is too large, scale based on height instead
-            if target_height > panel_height * 0.6:  # Use 60% of panel height
+            
+            if target_height > panel_height * 0.6: 
                 target_height = int(panel_height * 0.6)
                 target_width = int(target_height * aspect_ratio)
             
